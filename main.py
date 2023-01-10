@@ -9,9 +9,8 @@ bot = telebot.TeleBot(TELEGRAM_API_KEY)
 
 @bot.message_handler(commands=['start', 'restart'])
 def start(prompt):
-    message = f'Привет, я готов ответить на твои запросы, брат {prompt.from_user.first_name}'
+    message = f'Привет, я готов ответить на твои запросы, {prompt.from_user.first_name}'
     bot.send_message(prompt.chat.id, message)
-    print(prompt)
 
 
 @bot.message_handler()
@@ -25,7 +24,9 @@ def handle_message(prompt):
         frequency_penalty=0.5,
         presence_penalty=0.0
     )
-    bot.send_message(chat_id=prompt.chat.id, text=response.choices[0].text)
+
+    message = response.choices[0].text if response else 'Слишком много запросов, не успеваю, повторите через минуту!'
+    bot.send_message(chat_id=prompt.chat.id, text=message)
 
 
 bot.polling()
