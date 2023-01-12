@@ -12,7 +12,7 @@ from stt import speech2text
 WORKDIR = str(pathlib.Path(__file__).parent.absolute())
 openai.api_key = OPENAI_API_KEY
 bot = telebot.TeleBot(TELEGRAM_API_KEY)
-TEMODEL = "/home/cb/v2_4lang_q.pt"
+TEMODEL = "/home/mdls/v2_4lang_q.pt"
 tmodel = torch.package.PackageImporter(TEMODEL).load_pickle("te_model", "model")
 
 last_message_time = {}

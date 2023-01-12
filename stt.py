@@ -3,7 +3,7 @@ import wave
 import json
 
 
-MODEL = r"/home/cb/vosk-model-small-ru-0.22"
+MODEL = r"/home/mdls/vosk-model-small-ru-0.22"
 model = Model(MODEL)
 voska = KaldiRecognizer(model, 16000)
 
