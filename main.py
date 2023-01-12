@@ -5,7 +5,7 @@ import pathlib
 import requests
 import time
 import torch
-from settings import OPENAI_API_KEY, TELEGRAM_API_KEY, TEMODEL
+from settings import OPENAI_API_KEY, TELEGRAM_API_KEY
 from convert import audioconvert
 from stt import speech2text
 
