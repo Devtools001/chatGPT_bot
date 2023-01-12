@@ -1,0 +1,10 @@
+python-dotenv~=0.21.0
+pytelegrambotapi
+openai~=0.26.0
+silero
+sounddevice
+numpy
+torch~=1.13.1
+wave~=0.0.2
+vosk~=0.3.45
+requests~=2.28.1
