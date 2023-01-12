@@ -60,7 +60,7 @@ def check_time_interval(user_id):
 
 @bot.message_handler()
 def handle_message(prompt):
-    message = ai_response(prompt.text).choices[0].text if ai_response else 'Интервал между запросами не должен быть менее 30 секунд. Повторите позже!'
+    message = ai_response(prompt.text, prompt.chat.id).choices[0].text if ai_response else 'Интервал между запросами не должен быть менее 30 секунд. Повторите позже!'
     bot.reply_to(prompt, text=message)
 
 
